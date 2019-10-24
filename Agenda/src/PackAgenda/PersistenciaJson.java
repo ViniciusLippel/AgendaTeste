@@ -50,10 +50,9 @@ public class PersistenciaJson implements Igravacao{
 	public List<Pessoa> ler() {
 		Gson gson = new Gson();
 		
-		String caminho="agenda.json";
         ListaPessoa obj = new ListaPessoa();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(caminho));
+			BufferedReader br = new BufferedReader(new FileReader("agenda.json"));
 			obj = gson.fromJson(br, ListaPessoa.class);
 		}
 			catch (Exception e) {

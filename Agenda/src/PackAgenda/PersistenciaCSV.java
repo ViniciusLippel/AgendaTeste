@@ -20,7 +20,7 @@ public class PersistenciaCSV implements Igravacao {
 			FileWriter arq = new FileWriter("src/PackAgenda/agenda.csv");
 			PrintWriter gravarArq = new PrintWriter(arq);
 			for (Pessoa pessoa : list) {
-				gravarArq.printf("%d,%s,%s,%s,%s\n", pessoa.getCodigo(), pessoa.getNome(), Arruma_data.arrumaDate(pessoa.getDataNasc()), pessoa.getEmail(), pessoa.getTelefone() );
+				gravarArq.printf("%d,%s,%s,%s,%s\n", pessoa.getCodigo(), pessoa.getNome(), Arruma_data.arrumaDate(pessoa.getDataNasc()), pessoa.getEmail(), pessoa.getFone() );
 			}
 			arq.close();
 			return true;
@@ -46,7 +46,7 @@ public class PersistenciaCSV implements Igravacao {
 				p.setNome(leitura[1]);
 				p.setDataNasc(Arruma_data.arrumaDateStrToCal(leitura[2]));
 				p.setEmail(leitura[3]);
-				p.setTelefone(leitura[4]);
+				p.setFone(leitura[4]);
 				lista.add(p);
 				linha = lerArq.readLine ();
 			}
