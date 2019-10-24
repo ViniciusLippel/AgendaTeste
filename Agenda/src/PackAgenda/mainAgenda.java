@@ -51,11 +51,11 @@ public class mainAgenda {
 			leia.nextLine();
 			if (e==1) {
 				p=new Pessoa();
-				System.out.println(" digite o cod ");
+				System.out.print(" digite o cod ");
 				p.setCodigo(leia.nextInt());
 				leia.nextLine();
 				
-				System.out.println("Nome: ");
+				System.out.print("Nome: ");
 				p.setNome(leia.nextLine());
 				
 				System.out.print("E-mail: ");
@@ -64,8 +64,8 @@ public class mainAgenda {
 				System.out.print("Data de nascimento dd/MM/yyyy:");
 				p.setDataNasc(Arruma_data.arrumaDateStrToCal(leia.nextLine()));
 				
-				System.out.println(" digite o telefone ");
-				p.setTelefone(leia.nextLine());
+				System.out.print("Telefone:");
+				p.setFone(leia.nextLine());
 				
 				lista.incluir(p);
 			}

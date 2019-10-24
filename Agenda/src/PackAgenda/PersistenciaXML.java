@@ -38,8 +38,8 @@ public class PersistenciaXML implements Igravacao{
             Element email = new Element("email");
             email.setText(list.get(x).getEmail());
 
-            Element tel = new Element("telefone");
-            tel.setText(list.get(x).getTelefone());
+            Element tel = new Element("fone");
+            tel.setText(list.get(x).getFone());
             
             Element data = new Element("data");
             data.setText(Arruma_data.arrumaDate(list.get(x).getDataNasc()));
@@ -87,7 +87,7 @@ public class PersistenciaXML implements Igravacao{
             p.setNome(element.getChildText("nome"));
             p.setEmail(element.getChildText("email"));
             p.setDataNasc(Arruma_data.arrumaDateStrToCal(element.getChildText("data")));
-            p.setTelefone(element.getChildText("telefone"));
+            p.setFone(element.getChildText("fone"));
             
             pessoas.add(p);
         }

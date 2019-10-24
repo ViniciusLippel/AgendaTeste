@@ -9,7 +9,7 @@ public class Pessoa {
 	private String nome;
 	private Calendar dataNasc;
 	private String email;
-	private String telefone;
+	private String fone;
 	
 	
 	
@@ -25,11 +25,11 @@ public class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTelefone() {
-		return telefone;
+	public String getFone() {
+		return fone;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setFone(String telefone) {
+		this.fone = telefone;
 	}
 	public int getCodigo() {
 		return codigo;
@@ -55,7 +55,7 @@ public class Pessoa {
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", telefone=");
-		builder.append(telefone);
+		builder.append(fone);
 		builder.append("]");
 		return builder.toString();
 	}
