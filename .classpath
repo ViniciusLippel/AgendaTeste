@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Agenda/src"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/jdom-2.0.6-contrib.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/jdom-2.0.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/jdom-2.0.6-junit.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/jdom-2.0.6-sources.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/jdom-2.0.6.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/lib/jaxen-1.1.6.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/lib/xalan/serializer-2.7.2.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/lib/xalan/xalan-2.7.2.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="Agenda/lib/jdom-2.0.6/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="Agenda/src/gson-2.6.2.jar"/>
+	<classpathentry kind="output" path="Agenda/bin"/>
+</classpath>
