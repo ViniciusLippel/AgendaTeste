@@ -3,8 +3,7 @@ package PackAgenda;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-
+import java.util.stream.Collectors;
 import java.io.BufferedReader;
 
 import java.io.FileReader;
@@ -12,6 +11,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,8 +21,6 @@ import java.nio.charset.Charset;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-
-
 
 
 public class PersistenciaJson implements Igravacao{
@@ -50,38 +49,19 @@ public class PersistenciaJson implements Igravacao{
 	public List<Pessoa> ler() {
 		Gson gson = new Gson();
 		
-        ListaPessoa obj = new ListaPessoa();
+        ListaPessoa list = new ListaPessoa();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("agenda.json"));
-			obj = gson.fromJson(br, ListaPessoa.class);
+			String str = br.lines().collect(Collectors.joining());
+			String strbr = str.replace("][", ",");
+			Reader reader = new StringReader(strbr);
+			br = new BufferedReader(reader);
+			list = gson.fromJson(br, ListaPessoa.class);
 		}
 			catch (Exception e) {
 	            e.printStackTrace();
 			}
-		return obj.getPessoas();
-	}
-	
-	public void importar() throws MalformedURLException, IOException {
-		Gson gson = new Gson();
-		
-//		String caminho="http://www.curvello.com/gerador/pessoa/10";
-		InputStream is = new URL("http://www.curvello.com/gerador/pessoa/10").openStream();
-//        ListaPessoa list = new ListaPessoa();
-		List<Pessoa> list = new ArrayList<Pessoa>();
-        try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-//			list = gson.fromJson(br, ListaPessoa.class);
-			Type collectionType = new TypeToken<Collection<Pessoa>>(){}.getType();
-			list = gson.fromJson(br, collectionType);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-        
-        gravar(list);
-        
-//        for(Pessoa p : list) {
-//        	System.out.println(p.getTelefone());
-//        }
+		return list.getPessoas();
 	}
 	
 }

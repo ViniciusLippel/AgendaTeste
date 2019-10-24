@@ -22,13 +22,14 @@ public class mainAgenda {
 		PersistenciaCSV csv=new PersistenciaCSV();
 		ListaPessoa lista= new ListaPessoa();
 		Pessoa p = new Pessoa();
+		Importacao imp = new Importacao();
 		
 		System.out.println("Deseja importar dados: \n1- sim \n2- não");
 		int x = leia.nextInt();
 		leia.nextLine();
 		
 		if (x==1){
-			json.importar();
+			imp.importar();
 		}
 		else {
 			boolean menu=true;
@@ -80,7 +81,7 @@ public class mainAgenda {
 						}
 						per.gravacao(lista.getPessoas());
 					}else{
-					
+					imp.sincronizar();
 					menu=false;
 					}	
 				}
